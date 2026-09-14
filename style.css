@@ -1,0 +1,79 @@
+/* Basisstijl van het inhoudsopgave-block.
+   Verder naar smaak aan te passen via GenerateBlocks Global Styles
+   of een "Additional CSS Class" op het block. */
+
+.toc-block-nav {
+	--toc-indent-step: 1.25em;
+}
+
+.toc-block-title {
+	margin: 0 0 0.5em;
+}
+
+.toc-block-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.toc-block-item {
+	margin: 0 0 0.4em;
+}
+
+.toc-block-item a {
+	text-decoration: none;
+}
+
+.toc-block-item a:hover {
+	text-decoration: underline;
+}
+
+.toc-block-item a.is-active {
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.toc-block-level-1 {
+	padding-left: 0;
+	font-weight: 600;
+}
+
+.toc-block-level-2 {
+	padding-left: 0;
+}
+
+.toc-block-level-3 {
+	padding-left: var( --toc-indent-step );
+}
+
+.toc-block-level-4 {
+	padding-left: calc( var( --toc-indent-step ) * 2 );
+}
+
+.toc-block-level-5 {
+	padding-left: calc( var( --toc-indent-step ) * 3 );
+}
+
+.toc-block-level-6 {
+	padding-left: calc( var( --toc-indent-step ) * 4 );
+}
+
+/* Zorgt dat een gescrolde titel niet achter een sticky header (GeneratePress) verdwijnt.
+   Pas de waarde aan op de hoogte van jouw sticky header. */
+:is( h1, h2, h3, h4, h5, h6 )[ id ] {
+	scroll-margin-top: 100px;
+}
+
+/* Responsive: welke niveaus op desktop/mobiel getoond worden.
+   Breekpunt 768px; pas aan als jouw thema een ander mobiel-breekpunt gebruikt. */
+@media ( min-width: 769px ) {
+	.toc-block-hide-desktop {
+		display: none;
+	}
+}
+
+@media ( max-width: 768px ) {
+	.toc-block-hide-mobile {
+		display: none;
+	}
+}

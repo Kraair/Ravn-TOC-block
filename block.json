@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "toc-block/inhoudsopgave",
+  "title": "Inhoudsopgave",
+  "category": "widgets",
+  "icon": "list-view",
+  "description": "Automatische inhoudsopgave op basis van de titels van de pagina, met smooth scroll en apart instelbaar welke niveaus op desktop en mobiel zichtbaar zijn.",
+  "keywords": [ "toc", "inhoudsopgave", "table of contents", "index" ],
+  "textdomain": "toc-block",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Inhoudsopgave"
+    },
+    "desktopLevels": {
+      "type": "array",
+      "default": [ 2, 3 ]
+    },
+    "mobileLevels": {
+      "type": "array",
+      "default": [ 2, 3 ]
+    },
+    "linkColor": {
+      "type": "string",
+      "default": ""
+    },
+    "linkHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "linkFontSize": {
+      "type": "number",
+      "default": 0
+    },
+    "linkFontWeight": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "linkTextDecoration": {
+      "type": "string",
+      "default": "none"
+    },
+    "highlightActive": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [ "wide", "full" ],
+    "anchor": true,
+    "className": true,
+    "customClassName": true,
+    "color": {
+      "background": true,
+      "text": true,
+      "link": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true,
+      "blockGap": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "border": {
+      "radius": true,
+      "color": true,
+      "width": true,
+      "style": true
+    }
+  },
+  "editorScript": "toc-block-editor-script",
+  "style": "toc-block-style",
+  "viewScript": "toc-block-frontend-script",
+  "render": "file:./render.php"
+}
